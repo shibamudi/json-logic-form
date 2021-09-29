@@ -16,12 +16,12 @@ function extendConf(conf) {
   conf.framework.plugins.push('Dialog');
 }
 
-module.exports = ({ compatibleWith, extendQuasarConf }) => {
+module.exports = (api) => {
   // Quasar compatibility check; you may need
   // hard dependencies, as in a minimum version of the "quasar"
   // package or a minimum version of "@quasar/app" CLI
-  compatibleWith('quasar', '^2.0.0');
-  compatibleWith('@quasar/app', '^3.0.0');
+  api.compatibleWith('quasar', '^2.0.0');
+  api.compatibleWith('@quasar/app', '^3.0.0');
 
   // Uncomment the line below if you provide a JSON API for your component
   // api.registerDescribeApi(
@@ -30,5 +30,5 @@ module.exports = ({ compatibleWith, extendQuasarConf }) => {
   // )
 
   // We extend /quasar.conf.js
-  extendQuasarConf(extendConf);
+  api.extendQuasarConf(extendConf);
 };

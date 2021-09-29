@@ -12,10 +12,10 @@
     />
     <div>
       <q-btn
-          v-if="!schema.max || data.length < schema.max"
-          color="primary"
-          label="增加"
-          @click="onAddItem"
+        v-if="!schema.max || data.length < schema.max"
+        color="primary"
+        label="增加"
+        @click="onAddItem"
       />
     </div>
   </div>
@@ -25,12 +25,12 @@
 import {
   defineComponent, inject, provide, reactive, readonly, ref, watch,
 } from 'vue';
-import { uid } from 'quasar';
+import { uid, QBtn } from 'quasar';
 import JsonLogicFormContainerArrayItem from './JsonLogicFormContainerArrayItem';
 
 export default defineComponent({
   name: 'JsonLogicFormContainerArray',
-  components: { JsonLogicFormContainerArrayItem },
+  components: { QBtn, JsonLogicFormContainerArrayItem },
   inheritAttrs: false,
   props: {
     modelValue: {

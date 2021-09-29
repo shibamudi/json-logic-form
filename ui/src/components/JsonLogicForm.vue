@@ -32,7 +32,7 @@
 import {
   defineComponent, provide, reactive, readonly, watch,
 } from 'vue';
-import { useQuasar } from 'quasar';
+import { useQuasar, QForm, QBtn } from 'quasar';
 import useJsonLogic from '../composables/use-json-logic';
 import useContainer from '../composables/use-container';
 import useDataResource from '../composables/use-data-resource';
@@ -40,6 +40,7 @@ import useGraphBuilder from '../composables/use-graph-builder';
 
 export default defineComponent({
   name: 'JsonLogicForm',
+  components: { QForm, QBtn },
   inheritAttrs: false,
   props: {
     modelValue: {

@@ -21,12 +21,14 @@
 import {
   defineComponent, provide, reactive, readonly, watch,
 } from 'vue';
+import { QBtn, QField } from 'quasar';
 import useJsonLogic from '../composables/use-json-logic';
 import useContainer from '../composables/use-container';
 import useDataResource from '../composables/use-data-resource';
 
 export default defineComponent({
   name: 'JsonLogicFormContainerArrayItem',
+  components: { QBtn, QField },
   inheritAttrs: false,
   props: {
     modelValue: {

@@ -21,7 +21,8 @@
       <slot name="action">
         <slot name="actionPrepend" />
         <q-btn v-if="showSubmit" :label="submitText" type="submit" color="primary"/>
-        <q-btn label="重置" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn v-if="showReset" :label="resetText"
+               type="reset" color="primary" flat class="q-ml-sm" />
         <slot name="actionAppend" />
       </slot>
     </div>

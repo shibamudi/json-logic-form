@@ -1,7 +1,7 @@
 {
   "name": "quasar-app-extension-json-logic-form",
   "version": "1.0.3",
-  "description": "A Quasar App Extension",
+  "description": "Quasar app extension provides a form builder that uses a JSON schema containing logic.",
   "author": "十八亩地 <919177684@qq.com>",
   "license": "MIT",
   "main": "src/index.js",

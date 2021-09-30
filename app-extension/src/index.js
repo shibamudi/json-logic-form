@@ -14,6 +14,7 @@ function extendConf(conf) {
   conf.build.transpileDependencies.push(/quasar-app-extension-json-logic-form[\\/]src/);
 
   conf.framework.plugins.push('Dialog');
+  conf.framework.plugins.push('Notify');
 }
 
 module.exports = (api) => {

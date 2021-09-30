@@ -34,7 +34,7 @@ import {
   defineComponent, provide, reactive, readonly, watch,
 } from 'vue';
 import { useQuasar, QForm, QBtn } from 'quasar';
-import useJsonLogic from '../composables/use-json-logic';
+import useJsonLogic, { isLogic } from '../composables/use-json-logic';
 import useContainer from '../composables/use-container';
 import useDataResource from '../composables/use-data-resource';
 import useGraphBuilder from '../composables/use-graph-builder';
@@ -111,6 +111,9 @@ export default defineComponent({
       type: Object,
       default: () => ({}),
     },
+    formValidate: {
+      type: Object,
+    },
   },
   emits: [
     'update:modelValue',
@@ -178,6 +181,18 @@ export default defineComponent({
     }
 
     function onSubmit() {
+      // 表单额外的验证
+      if (props.formValidate && isLogic(props.formValidate)) {
+        const v = applyLogic(props.formValidate);
+        if (v !== true) {
+          $q.notify({
+            type: 'negative',
+            message: v,
+          });
+          return;
+        }
+      }
+
       if (props.submitConfirm) {
         $q.dialog({
           message: props.submitConfirmText,

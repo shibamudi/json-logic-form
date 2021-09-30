@@ -2,6 +2,8 @@
 
 Quasar app extension provides a form builder that uses a JSON schema containing logic. Use form data, injection data and logical description in JSON schema to control form structure, field properties, and even produce graphql mutation for submission. This can be useful when you want to define a flexible form from data in a database.
 
+> The document is not finished yet.
+
 [![npm](https://img.shields.io/npm/v/quasar-app-extension-json-logic-form.svg?label=quasar-app-extension-json-logic-form)](https://www.npmjs.com/package/quasar-app-extension-json-logic-form)
 [![npm](https://img.shields.io/npm/dt/quasar-app-extension-json-logic-form.svg)](https://www.npmjs.com/package/quasar-app-extension-json-logic-form)
 
@@ -179,6 +181,14 @@ customRules: {
 }
 ```
 See the **Validate** section for details.
+
+### formValidate
+```
+formValidate: {
+  type: Object,
+}
+```
+Additional global validation.
 
 ## Events
 ### update:modelValue -> function(formData)

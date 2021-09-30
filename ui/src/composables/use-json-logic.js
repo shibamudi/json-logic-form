@@ -14,11 +14,18 @@ function useJsonLogic(dataResource = {}) {
       return schema;
     }
 
-    const data = schema.dataResource
-      ? dataResource[schema.dataResource]
-      : dataResource.defaultData
-        ? dataResource.defaultData
-        : dataResource;
+    let data;
+    if (schema.dataResource) {
+      if (schema.dataResource === 'root') {
+        data = dataResource;
+      } else {
+        data = dataResource[schema.dataResource];
+      }
+    } else if (dataResource.defaultData) {
+      data = dataResource.defaultData;
+    } else {
+      data = dataResource;
+    }
 
     return jsonLogic.apply(schema.logic, data);
   }
